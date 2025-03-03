@@ -6,7 +6,9 @@ jobs:
   job-to-do-2-actions:
     runs-on: ubuntu-latest
     steps:
-      - name: Step one
-        uses: actions/checkout@v4
-      - name: Step two
-        uses: actions/hello-world-javascript-action@main
+    - uses: actions/checkout@v4
+    - uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+    - run: java App.java
